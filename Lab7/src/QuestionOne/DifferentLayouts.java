@@ -62,6 +62,11 @@ public class DifferentLayouts extends JFrame {
         JButton backspaceButton = new JButton("Backspace");
         backspaceButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         backspaceButton.addActionListener(e -> {
+            String pin = pinField.getText();
+            if (!pin.isEmpty()) {
+                pin = pin.substring(0, pin.length() - 1);
+                pinField.setText(pin);
+            }
         });
         thirdPanel.add(backspaceButton);
 
